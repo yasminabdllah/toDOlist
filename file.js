@@ -63,16 +63,16 @@ function program(){
 
 };
 
-function addInToLocalStorage(){
-    if (to_do_list!=null){
-        to_do_list.push(input.value);
-        
-        localStorage.setItem("tasks",JSON.stringify(to_do_list));
+function addInToLocalStorage() {
+    if (to_do_list === null) {
+        to_do_list = [];
     }
-    else{
-        let to_do_list=[];   
+    if (input.value.trim() !== "") {
+        to_do_list.push(input.value);
+        localStorage.setItem("tasks", JSON.stringify(to_do_list));
     }
 }
 function GetFromLocal(){
     to_do_list=JSON.parse(localStorage.getItem("tasks"));
 }
+
