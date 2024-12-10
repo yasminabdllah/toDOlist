@@ -48,6 +48,7 @@ function dEl(i) {
 }
 function program(){
     list.innerHTML='';
+    if (!to_do_list) to_do_list = [];
     for(let i =0 ; i<to_do_list.length ; i++){
         list.innerHTML+= `<div id="ID"class="do"> 
         <p id=${i}> ${to_do_list[i]} </p>
