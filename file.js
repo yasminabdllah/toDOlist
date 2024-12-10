@@ -66,6 +66,7 @@ function program(){
 function addInToLocalStorage() {
     if (to_do_list === null) {
         to_do_list = [];
+        to_do_list.push(input.value);
     }
     if (input.value.trim() !== "") {
         to_do_list.push(input.value);
