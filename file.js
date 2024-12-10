@@ -73,7 +73,15 @@ function addInToLocalStorage() {
         localStorage.setItem("tasks", JSON.stringify(to_do_list));
     }
 }
-function GetFromLocal(){
-    to_do_list=JSON.parse(localStorage.getItem("tasks"));
+function GetFromLocal() {
+    try {
+        to_do_list = JSON.parse(localStorage.getItem("tasks"));
+        if (!to_do_list) {
+            to_do_list = [];
+        }
+    } catch (error) {
+        console.error("Failed to get tasks from localStorage", error);
+        to_do_list = [];
+    }
 }
 
